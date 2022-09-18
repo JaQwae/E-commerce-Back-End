@@ -30,9 +30,12 @@ Product.init(
       defaultValue: 10,
       isNumeric: true,
       // Foreign Key
-      references: {
-        model: 'category',
-        key: 'category_id',
+      category_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'category',
+          key: 'id',
+        },
       },
     },
   },

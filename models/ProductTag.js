@@ -13,14 +13,20 @@ ProductTag.init(
       allowNull: false,
     },
     // Foreign Key
-    references: {
-      model: 'product',
-      key: 'product_id',
+    product_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'product',
+        key: 'id',
+      },
     },
     // Foreign Key
-    references: {
-      model: 'tag',
-      key: 'tag_id',
+    tag_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'tag',
+        key: 'id',
+      },
     },
   },
   {
