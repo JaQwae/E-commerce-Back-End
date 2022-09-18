@@ -29,16 +29,16 @@ Product.init(
       allowNull: false,
       defaultValue: 10,
       isNumeric: true,
+    },
       // Foreign Key
       category_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'category',
-          key: 'id',
+          key: 'category_id',
         },
       },
     },
-  },
   {
     sequelize,
     timestamps: false,

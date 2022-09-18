@@ -17,7 +17,7 @@ ProductTag.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'product',
-        key: 'id',
+        key: 'product_id',
       },
     },
     // Foreign Key
@@ -25,7 +25,7 @@ ProductTag.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'tag',
-        key: 'id',
+        key: 'tag_id',
       },
     },
   },
