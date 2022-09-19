@@ -55,12 +55,51 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:tag_id', async (req, res) => {
   // update a tag's name by its `id` value
+  try {
+    const updatedTag = await Tag.update(
+      {
+        tag_name: req.body.tag_name,
+      },
+      {
+        where: {
+          tag_id: req.params.tag_id,
+        },
+      }
+    )
+
+    if (!updatedTag) {
+      res.status(404).json({ message: 'No tags found with that id!' });
+      return;
+    }
+
+    res.status(200).json(updatedTag);
+  }
+
+  catch (err) {
+    res.status(500).json(err);
+    };
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:tag_id', async (req, res) => {
   // delete on tag by its `id` value
+  try {
+    const tagData = await Tag.destroy({
+      where: {
+        tag_id: req.params.tag_id,
+      },
+    });
+
+    if (!tagData) {
+      res.status(404).json({ message: 'No tags found with that id!' });
+      return;
+    }
+
+    res.status(200).json(tagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
