@@ -86,11 +86,11 @@ router.post('/', (req, res) => {
 });
 
 // update product
-router.put('/:id', (req, res) => {
+router.put('/:product_id', (req, res) => {
   // update product data
   Product.update(req.body, {
     where: {
-      id: req.params.id,
+      product_id: req.params.product_id,
     },
   })
     .then((product) => {
@@ -127,16 +127,16 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:product_id', async (req, res) => {
   // delete one product by its `id` value
   try {
     const productData = await Product.destroy({
       where: {
-        product_id: req.params.category_id,
+        product_id: req.params.product_id,
       },
     });
 
-    if (productData) {
+    if (!productData) {
       res.status(404).json({ message: 'No product found with that id!' });
       return;
     }
