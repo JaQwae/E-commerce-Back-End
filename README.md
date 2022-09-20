@@ -35,7 +35,7 @@ To run this application, you must complete the following steps:
 	- Condense the amount of information that will be displayed when pulling all information from a get route
 	- Adding tests to ensure the integrity of the models
 
-### Images:
+### Video:
 
 https://user-images.githubusercontent.com/105896967/191157136-05ff369d-2bf3-4332-858e-febc6e2d40c4.mp4
 
