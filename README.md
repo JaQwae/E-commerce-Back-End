@@ -36,7 +36,8 @@ To run this application, you must complete the following steps:
 	- Adding tests to ensure the integrity of the models
 
 ### Images:
-![insert image description here](.assets/images/insert video.png)
+
+https://user-images.githubusercontent.com/105896967/191157136-05ff369d-2bf3-4332-858e-febc6e2d40c4.mp4
 
 ## Contributors:
 - JaQwae Ellison
